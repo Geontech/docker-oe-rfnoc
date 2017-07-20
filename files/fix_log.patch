@@ -1,0 +1,21 @@
+--- host/lib/usrp/e100/e100_mmap_zero_copy.cpp	2017-03-02 21:58:46.520630603 -0500
++++ host/lib/usrp/e100-patched/e100_mmap_zero_copy.cpp	2017-03-06 19:04:01.033981096 -0500
+@@ -111,7 +111,7 @@
+             (_rb_size.num_rx_frames + _rb_size.num_tx_frames) * _frame_size;
+ 
+         //print sizes summary
+-        UHD_LOG
++        UHD_LOGGER_DEBUG("E100")
+             << "page_size:          " << page_size                   
+             << "frame_size:         " << _frame_size                 
+             << "num_pages_rx_flags: " << _rb_size.num_pages_rx_flags 
+@@ -134,7 +134,7 @@
+         size_t send_buff_off = send_info_off + (_rb_size.num_pages_tx_flags * page_size);
+ 
+         //print offset summary
+-        UHD_LOG
++        UHD_LOGGER_DEBUG("E100")
+             << "recv_info_off: " << recv_info_off 
+             << "recv_buff_off: " << recv_buff_off 
+             << "send_info_off: " << send_info_off 
+
