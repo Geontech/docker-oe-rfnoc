@@ -61,7 +61,7 @@ RUN git config --global user.name "oe-base" && \
 
 RUN echo "FORCE"
 
-RUN repo init -u http://curiosity/openembedded/e300-manifest.git -b rfnoc-redhawk && \
+RUN repo init -u http://github.com/geontech/e300-manifest.git -b rfnoc-redhawk && \
     repo sync
 
 # Copy in files
