@@ -36,7 +36,7 @@ ENV BAKEDIR /opt/oe-project
 ENV OECORE ${BAKEDIR}/oe-core
 ENV OECORE_ENV ${OECORE}/oe-init-build-env
 ENV MACHINE=ettus-e3xx-sg1
-ENV BUILD_IMAGE=redhawk-usrp-uhd-image
+ENV BUILD_IMAGE=redhawk-usrp-uhd-rfnoc-image
 
 # Create user for actual build
 RUN id ${USERNAME} 2>/dev/null || useradd --uid 30000 --create-home ${USERNAME}
@@ -59,9 +59,7 @@ RUN git config --global user.name "oe-base" && \
     git config --global user.email "oe-base@gmail.com" && \
     git config --global color.ui false
 
-RUN echo "FORCE"
-
-RUN repo init -u http://github.com/geontech/e300-manifest.git -b rfnoc-redhawk && \
+RUN repo init -u http://github.com/geontech/e300-manifest.git -b feature/rfnoc-image && \
     repo sync
 
 # Copy in files
