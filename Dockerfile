@@ -59,13 +59,10 @@ RUN git config --global user.name "oe-base" && \
     git config --global user.email "oe-base@gmail.com" && \
     git config --global color.ui false
 
-RUN repo init -u http://github.com/geontech/e300-manifest.git -b feature/rfnoc-image && \
+RUN repo init -u http://github.com/geontech/e300-manifest.git -b develop && \
     repo sync
 
 # Copy in files
-COPY files/uhd_git.bb ${BAKEDIR}/meta-sdr/recipes-support/uhd/
-COPY files/fix_block_id.patch ${BAKEDIR}/meta-sdr/recipes-support/uhd/uhd/
-COPY files/fix_log.patch ${BAKEDIR}/meta-sdr/recipes-support/uhd/uhd/
 COPY files/entry-point.sh ${BAKEDIR}/
 
 # Expose the environment variables to following images
