@@ -55,7 +55,7 @@ To configure a default Device Manager profile, run the following:
 
     $SDRROOT/dev/devices/RFNoC_ProgrammableDevice/nodeconfig.py --noinplace --domainname <YOUR_DOMAIN_NAME> --usrptype e3x0
 
-This will create a Device Manager profile located at $SDRROOT/dev/nodes/DevMgr-RFNoC_<hostname>/DeviceManager.dcd.xml.
+This will create a Device Manager profile located at $SDRROOT/dev/nodes/DevMgr-RFNoC_&lt;hostname>/DeviceManager.dcd.xml.
 While this DeviceManager is sufficient to run the RFNoC_ProgrammableDevice, there will be no functionality until a Persona
 Device is also running. Following the comment block at the bottom of the file will help to add one or more Personas. While this
 block is written toward the RFNoC_DefaultPersona, other Persona Devices can be added in a similar way.
